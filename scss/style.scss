@@ -1,0 +1,23 @@
+body {
+  background: lightblue;
+  width: 450px;
+}
+
+.tabs {
+  & {
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+  }
+
+  > .tab {
+    font: 400 16px/1 Arial;
+    float: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  > .tab.selected {
+    background: lightcoral;
+  }
+}

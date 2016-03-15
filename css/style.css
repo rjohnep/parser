@@ -1,4 +1,7 @@
-body {
-    background: red;
-    width: 500px;
-}
+body { background: lightblue; width: 450px; }
+
+.tabs { position: relative; overflow: hidden; list-style: none; }
+
+.tabs > .tab { font: 400 16px/1 Arial; float: left; padding: 10px; border: 1px solid #ccc; cursor: pointer; }
+
+.tabs > .tab.selected { background: lightcoral; }

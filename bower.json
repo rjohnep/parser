@@ -1,0 +1,21 @@
+{
+  "name": "john",
+  "description": "product parser",
+  "main": "",
+  "authors": [
+    "john"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rjohnep/parser",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "~3.4.0"
+  }
+}

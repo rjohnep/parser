@@ -4,13 +4,27 @@
     <title>Product Parser</title>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <script type='text/javascript' src='bower_components/knockout/dist/knockout.js'></script>
+    <script type='text/javascript' src='js/jquery-2.2.1.min.js'></script>
 </head>
 <body>
 
-<p>First name: <input data-bind="value: firstName" /></p>
-<p>Last name: <input data-bind="value: lastName" /></p>
-<h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+<!-- Folders -->
+<ul class="tabs" data-bind="foreach: tabs">
+    <li class="tab" data-bind="text: $data,
+                   css: { selected: $data == $root.chosenTabId() },
+                   click: $root.goToTab"></li>
+</ul>
 
+<!-- Mails grid -->
+<table class="mails" data-bind="with: chosenTabData">
+    <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
+    <tbody data-bind="foreach: mails">
+    <tr>
+        <td data-bind="text: from"></td>
+        <td data-bind="text: to"></td>
+    </tr>
+    </tbody>
+</table>
 
 <script src="js/popup.js"></script>
 </body>
