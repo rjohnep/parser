@@ -4,6 +4,7 @@
     <title>Product Parser</title>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <script type='text/javascript' src='bower_components/knockout/dist/knockout.js'></script>
+    <script type='text/javascript' src='bower_components/underscore/underscore.js'></script>
     <script type='text/javascript' src='js/jquery-2.2.1.min.js'></script>
 </head>
 <body>
@@ -15,16 +16,48 @@
                    click: $root.goToTab"></li>
 </ul>
 
-<!-- Mails grid -->
-<table class="mails" data-bind="with: chosenTabData">
-    <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
-    <tbody data-bind="foreach: mails">
-    <tr>
-        <td data-bind="text: from"></td>
-        <td data-bind="text: to"></td>
-    </tr>
-    </tbody>
-</table>
+<!-- Tab contents -->
+<!-- ko if: chosenTabData -->
+<div class="tab-content" data-bind="with: chosenTabData">
+
+    <!-- ko if: $data.hasOwnProperty("item") -->
+    <div class="product-content">
+        <!-- ko with: item -->
+        <div class="image">
+            <img width="80" height="80" data-bind="attr: {title: title, src: src}"/>
+        </div>
+        <div class="info">
+            <div class="title" data-bind="text: title"></div>
+            <div class="price" data-bind="text: 'Price: ' + price"></div>
+            <!-- ko if: $data.hasOwnProperty("qty") -->
+            <input class="qty" data-bind="attr:{value: qty}"/>
+            <!--/ko-->
+            <!-- ko if: $data.hasOwnProperty("size") -->
+            <div class="size" data-bind="text: 'Size: ' + size"></div>
+            <!--/ko-->
+        </div>
+        <!--/ko-->
+        <div class="category">
+            <select data-bind=" options: $parent.categories,
+                       optionsText: 'value',
+                       optionsValue: 'value',
+                       optionsCaption: 'Choose...'"></select>
+        </div>
+        <a class="to-wishlist" href="#">Add to wishlist</a>
+        <a class="to-cart" href="#">Add to cart</a>
+    </div>
+    <!--/ko-->
+
+    <!-- ko if: $data.hasOwnProperty("cart") -->
+    <div data-bind="foreach: cart">
+        <!--ko foreach: _.keys($data)-->
+            <div data-bind="text: $parent[$data]"></div>
+            <div data-bind="text: $data"></div>
+        <!--/ko-->
+    </div>
+    <!--/ko-->
+</div>
+<!-- /ko -->
 
 <script src="js/popup.js"></script>
 </body>

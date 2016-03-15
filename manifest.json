@@ -10,5 +10,11 @@
     "default_icon": "source/48x48.png",
     "default_popup": "index.html"
   },
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+    "scripts": ["js/jquery-2.2.1.min.js", "source/Controller.js"]
+  },
+  "permissions": [
+    "http://dev3.madebyewave.com/"
+  ]
 }

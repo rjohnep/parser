@@ -1,7 +1,23 @@
-body { background: lightblue; width: 450px; }
+body { background: #c5d5cb; width: 350px; }
 
-.tabs { position: relative; overflow: hidden; list-style: none; }
+.tabs { position: relative; overflow: hidden; list-style: none; padding: 0; margin: 0 0 20px; background: #9fa8a3; }
 
-.tabs > .tab { font: 400 16px/1 Arial; float: left; padding: 10px; border: 1px solid #ccc; cursor: pointer; }
+.tabs > .tab { font: 400 16px/1 Calibri, Tahoma, Arial; float: left; padding: 10px; cursor: pointer; color: #fff; border-right: 1px solid #c5d5cb; text-transform: uppercase; }
 
-.tabs > .tab.selected { background: lightcoral; }
+.tabs > .tab.selected { background: #e3e0cf; }
+
+.product-content { position: relative; overflow: hidden; width: 100%; }
+
+.product-content > .image { float: left; margin-right: 20px; background: #fff url("../img/loading.gif") 50% 50% no-repeat; }
+
+.product-content > .info { position: relative; overflow: hidden; }
+
+.product-content > .info > .title { font: bold 14px/1.8 Calibri, Tahoma, Arial; color: #fff; }
+
+.product-content > .info > .price, .product-content > .info > .qty, .product-content > .info > .size { font: bold 13px/1 Calibri, Tahoma, Arial; color: #22264b; }
+
+.product-content > .info > .price { float: left; }
+
+.product-content > .info > .qty { padding: 5px; width: 20px; }
+
+.product-content .category { position: relative; overflow: hidden; width: 100%; }

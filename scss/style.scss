@@ -1,6 +1,13 @@
+$font-family: Calibri, Tahoma, Arial;
+$color1: #c5d5cb;
+$color2: #9fa8a3;
+$color3: #e3e0cf;
+$color4: #fff;
+$color5: #22264b;
+
 body {
-  background: lightblue;
-  width: 450px;
+  background: $color1;
+  width: 350px;
 }
 
 .tabs {
@@ -8,16 +15,63 @@ body {
     position: relative;
     overflow: hidden;
     list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    background: $color2;
   }
 
   > .tab {
-    font: 400 16px/1 Arial;
+    font: 400 16px/1 $font-family;
     float: left;
     padding: 10px;
-    border: 1px solid #ccc;
     cursor: pointer;
+    color: $color4;
+    border-right: 1px solid $color1;
+    text-transform: uppercase;
   }
   > .tab.selected {
-    background: lightcoral;
+    background: $color3;
+  }
+}
+
+.product-content {
+  & {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  > .image {
+    float: left;
+    margin-right: 20px;
+    background: #fff url("../img/loading.gif") 50% 50% no-repeat;
+  }
+
+  > .info {
+    position: relative;
+    overflow: hidden;
+  }
+  > .info > .title {
+    font: bold 14px/1.8 $font-family;
+    color: $color4;
+  }
+  > .info > .price,
+  > .info > .qty,
+  > .info > .size {
+    font: bold 13px/1 $font-family;
+    color: $color5;
+  }
+  > .info > .price {
+    float: left;
+  }
+  > .info > .qty {
+    padding: 5px;
+    width: 20px;
+  }
+
+  .category {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
   }
 }
