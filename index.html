@@ -3,6 +3,7 @@
 <head>
     <title>Product Parser</title>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <script type='text/javascript' src='bower_components/fastclick/lib/fastclick.js'></script>
     <script type='text/javascript' src='bower_components/knockout/dist/knockout.js'></script>
     <script type='text/javascript' src='bower_components/underscore/underscore.js'></script>
     <script type='text/javascript' src='js/jquery-2.2.1.min.js'></script>
@@ -20,40 +21,90 @@
 <!-- ko if: chosenTabData -->
 <div class="tab-content" data-bind="with: chosenTabData">
 
+    <!-- ko if: $data.hasOwnProperty("error") -->
+    <!-- ko with: error -->
+    <div class="notice" data-bind="text: message"></div>
+    <!--/ko-->
+    <!--/ko-->
+
     <!-- ko if: $data.hasOwnProperty("item") -->
-    <div class="product-content">
+    <form class="product-content" action="https://ewave.invisionapp.com/share/VJ67QPLQA#/screens/138502091" method="post">
         <!-- ko with: item -->
         <div class="image">
-            <img width="80" height="80" data-bind="attr: {title: title, src: src}"/>
+            <img width="100" height="100" data-bind="attr: {title: title, src: src}"/>
         </div>
         <div class="info">
-            <div class="title" data-bind="text: title"></div>
-            <div class="price" data-bind="text: 'Price: ' + price"></div>
+            <div class="form-item">
+                <input class="title" data-bind="attr:{value: title}"/>
+            </div>
+
+            <div class="form-item left">
+                <label>Price: </label>
+                <input class="price sub" data-bind="attr:{value: price}"/>
+            </div>
+
             <!-- ko if: $data.hasOwnProperty("qty") -->
-            <input class="qty" data-bind="attr:{value: qty}"/>
+            <div class="form-item left">
+                <label>QTY: </label>
+                <input class="qty sub" data-bind="attr:{value: qty}"/>
+            </div>
             <!--/ko-->
             <!-- ko if: $data.hasOwnProperty("size") -->
-            <div class="size" data-bind="text: 'Size: ' + size"></div>
+            <div class="form-item">
+                <label>Size: </label>
+                <input class="size sub" data-bind="attr:{value: size}"/>
+            </div>
+            <!--/ko-->
+            <!-- ko if: $data.hasOwnProperty("color") -->
+            <div class="form-item">
+                <label>Color: </label>
+                <input class="color" data-bind="attr:{value: color}"/>
+            </div>
             <!--/ko-->
         </div>
         <!--/ko-->
         <div class="category">
             <select data-bind=" options: $parent.categories,
-                       optionsText: 'value',
+                       optionsText: 'name',
                        optionsValue: 'value',
                        optionsCaption: 'Choose...'"></select>
         </div>
-        <a class="to-wishlist" href="#">Add to wishlist</a>
-        <a class="to-cart" href="#">Add to cart</a>
-    </div>
+
+        <a class="to-wishlist" href="#" data-bind="click: $root.toWishlist">Add to wishlist</a>
+        <a class="to-cart" href="#" data-bind="click: $root.toCart">Add to cart</a>
+    </form>
     <!--/ko-->
 
     <!-- ko if: $data.hasOwnProperty("cart") -->
-    <div data-bind="foreach: cart">
-        <!--ko foreach: _.keys($data)-->
-            <div data-bind="text: $parent[$data]"></div>
-            <div data-bind="text: $data"></div>
-        <!--/ko-->
+    <div class="cart-list">
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Qty</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--ko foreach: cart-->
+            <tr>
+                <td data-bind="text: title"></td>
+                <td align="center" data-bind="text: qty"></td>
+                <td align="center" data-bind="text: price"></td>
+            </tr>
+            <!--/ko-->
+            </tbody>
+        </table>
+    </div>
+    <!--/ko-->
+
+    <!-- ko if: $data.hasOwnProperty("promotions") -->
+    <div class="promo-papers" data-bind="foreach: promotions">
+        <div class="paper">
+            <span class="title" data-bind="text: title"></span>
+            <p class="description" data-bind="text: description"></p>
+            <span class="state" data-bind="text: state"></span>
+        </div>
     </div>
     <!--/ko-->
 </div>

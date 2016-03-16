@@ -1,13 +1,33 @@
+@import "normilize";
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 $font-family: Calibri, Tahoma, Arial;
 $color1: #c5d5cb;
 $color2: #9fa8a3;
 $color3: #e3e0cf;
 $color4: #fff;
 $color5: #22264b;
+$color6: #b56969;
+$color7: #b0aac2;
 
 body {
   background: $color1;
   width: 350px;
+}
+
+.left {
+  float: left!important;
 }
 
 .tabs {
@@ -51,27 +71,118 @@ body {
     position: relative;
     overflow: hidden;
   }
-  > .info > .title {
-    font: bold 14px/1.8 $font-family;
-    color: $color4;
+
+
+  .form-item {
+    padding: 3px 10px 3px 3px;
   }
-  > .info > .price,
-  > .info > .qty,
-  > .info > .size {
+  .form-item > input{
+    padding: 3px;
+  }
+  .form-item > .title {
+    width: 100%;
+  }
+  .form-item > .title,
+  .form-item > .price,
+  .form-item > .qty,
+  .form-item > .size {
     font: bold 13px/1 $font-family;
     color: $color5;
   }
-  > .info > .price {
-    float: left;
+  .form-item > label {
+    display: inline-block;
+    min-width: 30px;
   }
-  > .info > .qty {
-    padding: 5px;
-    width: 20px;
+  .form-item > .sub {
+    width: 60px;
+    text-align: center;
   }
 
   .category {
     position: relative;
     overflow: hidden;
     width: 100%;
+    padding: 10px 0 0;
+    margin: 0 0 20px;
   }
+  .category > select{
+    width: 100%;
+    height: 28px;
+  }
+}
+
+.to-wishlist {
+  display: block;
+  width: 100%;
+  background: $color7;
+  color: $color4;
+  font: bold 14px/36px $font-family;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.to-cart {
+  display: block;
+  width: 100%;
+  background: $color6;
+  color: $color4;
+  font: bold 14px/36px $font-family;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cart-list {
+  & {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  td {
+    border-bottom: 1px solid $color7;
+  }
+  td, th {
+    padding: 3px;
+  }
+}
+
+.promo-papers {
+  & {
+    height: 200px;
+    overflow-y: auto;
+  }
+
+  > .paper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $color2;
+    background: $color3;
+    margin: 0 0 10px;
+  }
+  > .paper > .title {
+    display: block;
+    font: bold 14px/1.4 $font-family;
+    color: $color6;
+  }
+  > .paper > .state {
+    display: inline-block;
+    font: bold 14px/1.4 $font-family;
+    background: $color6;
+    color: $color4;
+    text-transform: uppercase;
+    padding: 5px 10px;
+  }
+}
+
+.notice {
+  width: 100%;
+  background: $color6;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color4;
+  font: bold 14px/1 $font-family;
 }
