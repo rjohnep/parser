@@ -20,6 +20,7 @@ $color4: #fff;
 $color5: #22264b;
 $color6: #b56969;
 $color7: #b0aac2;
+$color8: #ff2369;
 
 body {
   background: $color1;
@@ -190,5 +191,23 @@ body {
   }
   &.success {
     background: $color2;
+  }
+}
+
+.progress-bar {
+  & {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 0 5px;
+  }
+  > .value {
+    position: relative;
+    background: $color8;
+    width: 0;
+    height: 4px;
+    left: 0;
+    -webkit-transition: width 500ms, left 500ms;
+    transition: width 500ms, left 500ms;
   }
 }

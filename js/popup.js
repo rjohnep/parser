@@ -38,8 +38,19 @@
                 console.log('Logging: ' + type + '::', message);
                 return true;
             },
+            /**
+             * request progress loader
+             * @param obj
+             */
             requestProgress: function (obj) {
-                // alert(obj * 25);
+                if (obj === 1) {
+                    document.getElementById('progress-value').style.width = 0;
+                    document.getElementById('progress-value').style.left = 0;
+                }
+
+                document.getElementById('progress-value').style.width = obj * 25 + '%';
+                if (obj === 4)
+                    setTimeout(function(){ document.getElementById('progress-value').style.left = '100%' }, 1000);
             },
             /**
              * AJAX without jquery
