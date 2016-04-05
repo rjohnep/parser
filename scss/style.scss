@@ -130,6 +130,7 @@ body {
   font: bold 14px/36px $font-family;
   text-align: center;
   text-transform: uppercase;
+  border: 0 none;
 }
 
 .cart-list {
@@ -178,11 +179,16 @@ body {
 }
 
 .notice {
-  width: 100%;
-  background: $color6;
-  padding: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  color: $color4;
-  font: bold 14px/1 $font-family;
+  & {
+    width: 100%;
+    background: $color6;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color4;
+    font: bold 14px/1 $font-family;
+  }
+  &.success {
+    background: $color2;
+  }
 }

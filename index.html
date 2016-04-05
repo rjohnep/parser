@@ -3,9 +3,9 @@
 <head>
     <title>Product Parser</title>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
-    <script type='text/javascript' src='bower_components/fastclick/lib/fastclick.js'></script>
+    <!--<script type='text/javascript' src='bower_components/fastclick/lib/fastclick.js'></script>-->
     <script type='text/javascript' src='bower_components/knockout/dist/knockout.js'></script>
-    <script type='text/javascript' src='bower_components/underscore/underscore.js'></script>
+    <script type='text/javascript' src='bower_components/underscore/underscore-min.js'></script>
     <script type='text/javascript' src='js/jquery-2.2.1.min.js'></script>
 </head>
 <body>
@@ -24,6 +24,12 @@
     <!-- ko if: $data.hasOwnProperty("error") -->
     <!-- ko with: error -->
     <div class="notice" data-bind="text: message"></div>
+    <!--/ko-->
+    <!--/ko-->
+
+    <!-- ko if: $data.hasOwnProperty("success") -->
+    <!-- ko with: success -->
+    <div class="notice success" data-bind="text: message"></div>
     <!--/ko-->
     <!--/ko-->
 

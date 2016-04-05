@@ -18,7 +18,8 @@ chrome.runtime.onMessage.addListener(function (msg, sender) {
                         document.querySelector("meta[property='og:image']").content :
                         document.querySelector("#image").src,
                     'qty': 1,
-                    'color': 'undefined'
+                    'color': 'undefined',
+                    'size': 0
                 }
             };
 

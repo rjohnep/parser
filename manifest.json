@@ -1,9 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "Product parser",
-  "version": "1.0",
+
+  "name": "Universal Cart",
+  "version": "0.0.1",
+
+  "description": "Universal Cart",
   "icons": {
-    "16": "source/16x16.png"
+    "16": "source/16x16.png",
+    "48": "source/48x48.png",
+    "128": "source/128x128.png"
   },
   "browser_action": {
     "default_title": "Add to wishlist",
@@ -17,6 +22,7 @@
   },
   "permissions": [
     "activeTab",
-    "http://dev3.madebyewave.com/"
+    "http://dev3.madebyewave.com/",
+    "http://192.168.58.190/"
   ]
 }

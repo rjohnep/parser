@@ -162,7 +162,7 @@ body { background: #c5d5cb; width: 350px; }
 
 .to-wishlist { display: block; width: 100%; background: #b0aac2; color: #fff; font: bold 14px/36px Calibri, Tahoma, Arial; text-align: center; text-transform: uppercase; margin-bottom: 5px; }
 
-.to-cart { display: block; width: 100%; background: #b56969; color: #fff; font: bold 14px/36px Calibri, Tahoma, Arial; text-align: center; text-transform: uppercase; }
+.to-cart { display: block; width: 100%; background: #b56969; color: #fff; font: bold 14px/36px Calibri, Tahoma, Arial; text-align: center; text-transform: uppercase; border: 0; }
 
 .cart-list { overflow: hidden; position: relative; width: 100%; }
 
@@ -179,3 +179,5 @@ body { background: #c5d5cb; width: 350px; }
 .promo-papers > .paper > .state { display: inline-block; font: bold 14px/1.4 Calibri, Tahoma, Arial; background: #b56969; color: #fff; text-transform: uppercase; padding: 5px 10px; }
 
 .notice { width: 100%; background: #b56969; padding: 10px; text-align: center; text-transform: uppercase; color: #fff; font: bold 14px/1 Calibri, Tahoma, Arial; }
+
+.notice.success { background: #9fa8a3; }
