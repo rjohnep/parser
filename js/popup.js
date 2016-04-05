@@ -13,6 +13,7 @@
     app = (function () {
         //private zone
         var _app = {
+            progress_element: document.getElementById('progress-value'),
             /**
              * Convert object to request params string (GET)
              * @param obj
@@ -43,14 +44,23 @@
              * @param obj
              */
             requestProgress: function (obj) {
-                if (obj === 1) {
-                    document.getElementById('progress-value').style.width = 0;
-                    document.getElementById('progress-value').style.left = 0;
+                //start
+                if (obj === 1){
+                    _app.progress_element.classList.add('active');
                 }
 
-                document.getElementById('progress-value').style.width = obj * 25 + '%';
-                if (obj === 4)
-                    setTimeout(function(){ document.getElementById('progress-value').style.left = '100%' }, 1000);
+                _app.progress_element.style.width = obj * 25 + '%';
+
+                //final
+                if (obj === 4){
+                    setTimeout(function(){
+                        _app.progress_element.style.left = '100%';
+                        _app.progress_element.classList.remove('active');
+                    }, 300);
+                    setTimeout(function(){
+                        _app.progress_element.style = {left: 0, width: 0};
+                    }, 600);
+                }
             },
             /**
              * AJAX without jquery
@@ -62,7 +72,10 @@
                     request = {
                         async: true,
                         method: "GET",
-                        data: null
+                        data: null,
+                        error: function (data) {
+                            $this.logging('request is bad', 'REQUEST_ERROR');
+                        }
                     };
 
                 if (xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP")) {
@@ -71,6 +84,8 @@
 
                     //request data/params
                     request.data = request.data ? _app.convertData(request.data) : '';
+
+                    xhttp.addEventListener("error", request.error);
 
                     xhttp.onreadystatechange = function () {
                         //срусо request progress
@@ -140,39 +155,12 @@
                         console.timeEnd("concatenation");
                         appData.clickState = false;
                     },
-                    error: function (obj) {
-                        alert(2);
+                    error: function () {
+                        app.logging('request is bad, can\'t get cart', 'REQUEST_ERROR');
+                        appData.clickState = false;
                     }
                 }
             );
-
-            // $.ajax({
-            //         method: "POST",
-            //         url: "http://dev3.madebyewave.com/unicart/index.php/unicart/index/getCart",
-            //         cache: true,
-            //         dataType: 'json'
-            //     })
-            //     .done(function (msg) {
-            //         debugger;
-            //         self.chosenTabData(msg);
-            //         console.timeEnd("concatenation");
-            //         appData.clickState = false;
-            //     });
-        }
-
-        function getDataFromServer(tab, self) {
-            $.ajax({
-                    method: "POST",
-                    url: "http://dev3.madebyewave.com/mail.php",
-                    cache: true,
-                    data: {tab: tab},
-                    dataType: 'json'
-                })
-                .done(function (msg) {
-                    self.chosenTabData(msg);
-                    console.timeEnd("concatenation");
-                    appData.clickState = false;
-                });
         }
 
         // Data
@@ -194,14 +182,6 @@
                     'price': null
                 }
             ],
-            'promotions': [
-                {
-                    'id': null,
-                    'title': null,
-                    'description': null,
-                    'state': null
-                }
-            ],
             'error': {
                 message: 'or it is not Magento, or is not a product page'
             },
@@ -211,7 +191,7 @@
         };
         appData.clickState = false;
 
-        self.tabs = ['Item', 'Cart', 'Promotions'];
+        self.tabs = ['Item', 'Cart'];
         self.categories = [
             {name: 'on Sale', value: '0'},
             {name: 'HOT', value: '1'},
@@ -243,7 +223,7 @@
                     getCart();
                     break;
                 default:
-                    getDataFromServer(tab, self);
+                    alert('WHAT?!')
             }
         };
         self.toWishlist = function (data) {

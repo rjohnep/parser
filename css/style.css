@@ -184,4 +184,6 @@ body { background: #c5d5cb; width: 350px; }
 
 .progress-bar { position: relative; overflow: hidden; width: 100%; margin: 0 0 5px; }
 
-.progress-bar > .value { position: relative; background: #ff2369; width: 0; height: 4px; left: 0; -webkit-transition: width 500ms, left 500ms; transition: width 500ms, left 500ms; }
+.progress-bar > .value { position: relative; opacity: 0; background: #ff2369; width: 0; height: 4px; left: 0; -webkit-transition: width 500ms, left 500ms, opacity 300ms; transition: width 500ms, left 500ms, opacity 300ms; }
+
+.progress-bar > .value.active { opacity: 1; }
