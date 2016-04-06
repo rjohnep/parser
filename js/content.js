@@ -26,6 +26,47 @@ chrome.runtime.onMessage.addListener(function (msg, sender) {
             chrome.runtime.sendMessage({
                 item_model: result
             });
+
+            //cursor!logic
+            var css = '.ewave_cart_calibrate_click .ewave_cart_calibrate_hover_state { background: rgba(71,233,255, .2)!important; opacity:.7; transition: background 300ms, opacity 300ms; }',
+                style = document.createElement('style');
+
+            style.type = 'text/css';
+            if (style.styleSheet){
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+
+            document.getElementsByTagName('body')[0].classList.add('ewave_cart_calibrate_click');
+            document.getElementsByTagName('body')[0].appendChild(style);
+
+            document.addEventListener('mousemove', function(evt) {
+                if (document.querySelector('.ewave_cart_calibrate_hover_state'))
+                    document.querySelector('.ewave_cart_calibrate_hover_state').classList.remove('ewave_cart_calibrate_hover_state');
+
+                evt.target.classList.add('ewave_cart_calibrate_hover_state');
+            }, false);
+
+            function live (eventType, elementId, cb) {
+                document.addEventListener(eventType, function (event) {
+                    var el = event.target
+                        , found;
+
+                    while (el && !(found = el.classList.contains(elementId))) {
+                        el = el.parentElement;
+                    }
+
+                    if (found) {
+                        cb.call(el, event);
+                    }
+                });
+            }
+
+            live('click', 'ewave_cart_calibrate_click', function(evt) {
+                alert(2);
+                document.querySelector('.ewave_cart_calibrate_click').classList.remove('ewave_cart_calibrate_click');
+            });
         }
 
     } else {
@@ -34,6 +75,5 @@ chrome.runtime.onMessage.addListener(function (msg, sender) {
         });
     }
 });
-
 
 

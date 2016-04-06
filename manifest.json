@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Universal Cart",
-  "version": "0.0.1",
+  "version": "0.0.2",
 
   "description": "Universal Cart",
   "icons": {
@@ -17,9 +17,6 @@
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
 
-  "background": {
-    "scripts": ["js/jquery-2.2.1.min.js", "source/background.js"]
-  },
   "permissions": [
     "activeTab",
     "http://dev3.madebyewave.com/",
