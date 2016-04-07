@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec297ccc-fe91-4d75-a0f8-f6222122ba92" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/mapping.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/popup.js" afterPath="$PROJECT_DIR$/js/popup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/style.scss" afterPath="$PROJECT_DIR$/scss/style.scss" />
     </list>
     <ignored path="parser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +32,18 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="105" column="22" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+                <state relative-caret-position="468">
+                  <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/manifest.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -63,13 +72,14 @@
           <file leaf-file-name="popup.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/popup.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="392">
-                  <caret line="95" column="40" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+                <state relative-caret-position="272">
+                  <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
                   <folding>
-                    <element signature="e#5655#6290#0" expanded="false" />
-                    <element signature="e#6393#6566#0" expanded="false" />
-                    <element signature="e#7468#7571#0" expanded="false" />
-                    <marker date="1459850199211" expanded="false" signature="1186:1846" placeholder="{...}" />
+                    <element signature="e#5675#6310#0" expanded="false" />
+                    <element signature="e#6413#6586#0" expanded="false" />
+                    <element signature="e#7488#7591#0" expanded="false" />
+                    <marker date="1459953741793" expanded="false" signature="1206:1866" placeholder="{...}" />
+                    <marker date="1459953741793" expanded="true" signature="7994:9228" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -82,11 +92,11 @@
           <file leaf-file-name="popup.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/popup.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="233" column="39" selection-start-line="233" selection-start-column="39" selection-end-line="233" selection-end-column="39" />
+                <state relative-caret-position="336">
+                  <caret line="248" column="39" selection-start-line="248" selection-start-column="39" selection-end-line="248" selection-end-column="39" />
                   <folding>
-                    <element signature="e#6393#6566#0" expanded="false" />
-                    <element signature="e#7468#7571#0" expanded="false" />
+                    <element signature="e#6413#6586#0" expanded="false" />
+                    <element signature="e#7488#7591#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -131,6 +141,7 @@
         <option value="$PROJECT_DIR$/scss/style.scss" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp50470/home/dev3/public_html/mail.php" />
         <option value="$PROJECT_DIR$/mail.php" />
+        <option value="$PROJECT_DIR$/js/mapping.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/popup.js" />
       </list>
@@ -231,6 +242,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uCart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="universal_cart" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -344,12 +369,12 @@
       <workItem from="1459227183569" duration="521000" />
       <workItem from="1459227718790" duration="14595000" />
       <workItem from="1459401368391" duration="17000" />
-      <workItem from="1459833506083" duration="11387000" />
+      <workItem from="1459833506083" duration="21000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30200000" />
+    <option name="totallyTimeSpent" value="39813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1916" y="-4" width="1928" height="1048" extended-state="6" />
@@ -394,20 +419,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6393#6566#0" expanded="false" />
-            <element signature="e#7468#7571#0" expanded="false" />
+            <element signature="e#5675#6310#0" expanded="false" />
+            <element signature="e#6413#6586#0" expanded="false" />
+            <element signature="e#7488#7591#0" expanded="false" />
+            <marker date="1459953741793" expanded="false" signature="1206:1866" placeholder="{...}" />
+            <marker date="1459953741793" expanded="true" signature="7994:9228" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -460,8 +481,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6393#6566#0" expanded="false" />
-            <element signature="e#7468#7571#0" expanded="false" />
+            <element signature="e#5675#6310#0" expanded="false" />
+            <element signature="e#6413#6586#0" expanded="false" />
+            <element signature="e#7488#7591#0" expanded="false" />
+            <marker date="1459953741793" expanded="false" signature="1206:1866" placeholder="{...}" />
+            <marker date="1459953741793" expanded="true" signature="7994:9228" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -514,8 +538,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6393#6566#0" expanded="false" />
-            <element signature="e#7468#7571#0" expanded="false" />
+            <element signature="e#5675#6310#0" expanded="false" />
+            <element signature="e#6413#6586#0" expanded="false" />
+            <element signature="e#7488#7591#0" expanded="false" />
+            <marker date="1459953741793" expanded="false" signature="1206:1866" placeholder="{...}" />
+            <marker date="1459953741793" expanded="true" signature="7994:9228" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -582,8 +609,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6393#6566#0" expanded="false" />
-            <element signature="e#7468#7571#0" expanded="false" />
+            <element signature="e#5675#6310#0" expanded="false" />
+            <element signature="e#6413#6586#0" expanded="false" />
+            <element signature="e#7488#7591#0" expanded="false" />
+            <marker date="1459953741793" expanded="false" signature="1206:1866" placeholder="{...}" />
+            <marker date="1459953741793" expanded="true" signature="7994:9228" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -636,8 +666,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6393#6566#0" expanded="false" />
-            <element signature="e#7468#7571#0" expanded="false" />
+            <element signature="e#5675#6310#0" expanded="false" />
+            <element signature="e#6413#6586#0" expanded="false" />
+            <element signature="e#7488#7591#0" expanded="false" />
+            <marker date="1459953741793" expanded="false" signature="1206:1866" placeholder="{...}" />
+            <marker date="1459953741793" expanded="true" signature="7994:9228" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -682,13 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -759,22 +785,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="105" column="22" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+        <state relative-caret-position="238">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mapping.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="111" selection-start-line="21" selection-start-column="111" selection-end-line="21" selection-end-column="111" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="233" column="39" selection-start-line="233" selection-start-column="39" selection-end-line="233" selection-end-column="39" />
+        <state relative-caret-position="272">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
-            <element signature="e#6393#6566#0" expanded="false" />
-            <element signature="e#7468#7571#0" expanded="false" />
+            <element signature="e#5675#6310#0" expanded="false" />
+            <element signature="e#6413#6586#0" expanded="false" />
+            <element signature="e#7488#7591#0" expanded="false" />
+            <marker date="1459953741793" expanded="false" signature="1206:1866" placeholder="{...}" />
+            <marker date="1459953741793" expanded="true" signature="7994:9228" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

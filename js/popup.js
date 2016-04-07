@@ -21,7 +21,7 @@
              */
             convertData: function (obj) {
                 return Object.keys(obj).map(function (key) {
-                    return key + '=' + obj[key];
+                    return key + '=' + encodeURIComponent(obj[key]);
                 }).join('&');
             }
         };
@@ -231,17 +231,24 @@
             //alert('added to wishlist');
             return false;
         };
-        self.toCart = function (data) {
-            //data.item
+        self.addProduct = function (data) {
+            var form_data = {};
+
             if (data) {
-                if (data.item) {
-                    $.ajax({
-                            method: "POST",
-                            url: "http://dev3.madebyewave.com/unicart/index.php/unicart/index/addUrl",
-                            cache: true,
-                            data: data.item
-                        })
-                        .done(function (msg) {
+                //serialize form data
+                _.map(data.elements, function (element) {
+                    if (element.name)
+                        form_data[element.name] =  element.value;
+                });
+                form_data['src'] = document.getElementById('product_image').src;
+
+                app.sendRequest(
+                    {
+                        url: "http://dev3.madebyewave.com/unicart/index.php/unicart/index/addUrl",
+                        cache: true,
+                        data: form_data,
+                        dataType: 'json',
+                        success: function (msg) {
                             if (msg.error) {
                                 self.chosenTabData(Object.defineProperty({}, 'error', {
                                     __proto__: null,
@@ -254,8 +261,13 @@
                                 __proto__: null,
                                 value: appData.constructor['success']
                             }));
-                        });
-                }
+                        },
+                        error: function () {
+                            app.logging('request is bad, can\'t add product to cart', 'REQUEST_ERROR');
+                            appData.clickState = false;
+                        }
+                    }
+                );
             }
 
             return false;
