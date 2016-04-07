@@ -6,7 +6,7 @@
     <!--<script type='text/javascript' src='bower_components/fastclick/lib/fastclick.js'></script>-->
     <script type='text/javascript' src='bower_components/knockout/dist/knockout.js'></script>
     <script type='text/javascript' src='bower_components/underscore/underscore-min.js'></script>
-    <script type='text/javascript' src='js/jquery-2.2.1.min.js'></script>
+    <script type='text/javascript' src='js/mapping.js'></script>
 </head>
 <body>
 
@@ -39,50 +39,50 @@
     <!--/ko-->
 
     <!-- ko if: $data.hasOwnProperty("item") -->
-    <form class="product-content" action="https://ewave.invisionapp.com/share/VJ67QPLQA#/screens/138502091" method="post">
+    <form class="product-content" action="https://ewave.invisionapp.com/share/VJ67QPLQA#/screens/138502091" method="post" data-bind="submit: $root.addProduct">
         <!-- ko with: item -->
         <div class="image">
-            <img width="100" height="100" data-bind="attr: {title: title, src: src}"/>
+            <img id="product_image" width="100" height="100" data-bind="attr: {title: title, src: src}"/>
         </div>
         <div class="info">
             <div class="form-item">
-                <input class="title" data-bind="attr:{value: title}"/>
+                <input name="title" class="title" data-bind="attr:{value: title}"/>
             </div>
 
             <div class="form-item left">
                 <label>Price: </label>
-                <input class="price sub" data-bind="attr:{value: price}"/>
+                <input name="price" class="price sub" data-bind="attr:{value: price}"/>
             </div>
 
             <!-- ko if: $data.hasOwnProperty("qty") -->
             <div class="form-item left">
                 <label>QTY: </label>
-                <input class="qty sub" data-bind="attr:{value: qty}"/>
+                <input name="qty" class="qty sub" data-bind="attr:{value: qty}"/>
             </div>
             <!--/ko-->
             <!-- ko if: $data.hasOwnProperty("size") -->
             <div class="form-item">
                 <label>Size: </label>
-                <input class="size sub" data-bind="attr:{value: size}"/>
+                <input name="size" class="size sub" data-bind="attr:{value: size}"/>
+
             </div>
             <!--/ko-->
             <!-- ko if: $data.hasOwnProperty("color") -->
             <div class="form-item">
                 <label>Color: </label>
-                <input class="color" data-bind="attr:{value: color}"/>
+                <input name="color" class="color" data-bind="attr:{value: color}"/>
             </div>
             <!--/ko-->
         </div>
         <!--/ko-->
         <div class="category">
-            <select data-bind=" options: $parent.categories,
+            <select name="category" data-bind=" options: $parent.categories,
                        optionsText: 'name',
                        optionsValue: 'value',
                        optionsCaption: 'Choose...'"></select>
         </div>
 
-        <a class="to-wishlist" href="#" data-bind="click: $root.toWishlist">Add to wishlist</a>
-        <a class="to-cart" href="#" data-bind="click: $root.toCart">Add to cart</a>
+        <button class="to-cart" type="submit">Add to wishlist</button>
     </form>
     <!--/ko-->
 
