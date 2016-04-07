@@ -226,11 +226,7 @@
                     alert('WHAT?!')
             }
         };
-        self.toWishlist = function (data) {
-            //data.item
-            //alert('added to wishlist');
-            return false;
-        };
+
         self.addProduct = function (data) {
             var form_data = {};
 
@@ -241,6 +237,7 @@
                         form_data[element.name] =  element.value;
                 });
                 form_data['src'] = document.getElementById('product_image').src;
+                form_data['url'] = window.location.href;
 
                 app.sendRequest(
                     {
@@ -270,6 +267,23 @@
                 );
             }
 
+            return false;
+        };
+
+        //open cursor pointer
+        self.cursorPointer = function (data) {
+            debugger;
+            //got to content js, parse page
+            chrome.tabs.query({
+                active: true,
+                currentWindow: true
+            }, function (tabs) {
+                // ...and send a request for the DOM info...
+                chrome.tabs.sendMessage(
+                    tabs[0].id,
+                    {pointer: true}
+                );
+            });
             return false;
         };
 

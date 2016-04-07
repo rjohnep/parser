@@ -26,9 +26,12 @@ chrome.runtime.onMessage.addListener(function (msg, sender) {
             chrome.runtime.sendMessage({
                 item_model: result
             });
+        }
 
+        //cursor POINTER
+        if(msg.pointer) {
             //cursor!logic
-            var css = '.ewave_cart_calibrate_click .ewave_cart_calibrate_hover_state { background: rgba(71,233,255, .2)!important; opacity:.7; transition: background 300ms, opacity 300ms; }',
+            var css = '.ewave_cart_calibrate_click .ewave_cart_calibrate_hover_state { background: rgba(0,101,255, .25)!important; opacity:.9; transition: background 200ms, opacity 200ms; } .ewave_cart_calibrate_click * {cursor: cell!important;}',
                 style = document.createElement('style');
 
             style.type = 'text/css';
@@ -41,12 +44,12 @@ chrome.runtime.onMessage.addListener(function (msg, sender) {
             document.getElementsByTagName('body')[0].classList.add('ewave_cart_calibrate_click');
             document.getElementsByTagName('body')[0].appendChild(style);
 
-            document.addEventListener('mousemove', function(evt) {
+            live('mousemove', 'ewave_cart_calibrate_click', function(evt) {
                 if (document.querySelector('.ewave_cart_calibrate_hover_state'))
                     document.querySelector('.ewave_cart_calibrate_hover_state').classList.remove('ewave_cart_calibrate_hover_state');
 
                 evt.target.classList.add('ewave_cart_calibrate_hover_state');
-            }, false);
+            });
 
             function live (eventType, elementId, cb) {
                 document.addEventListener(eventType, function (event) {
@@ -64,10 +67,10 @@ chrome.runtime.onMessage.addListener(function (msg, sender) {
             }
 
             live('click', 'ewave_cart_calibrate_click', function(evt) {
-                alert(2);
                 document.querySelector('.ewave_cart_calibrate_click').classList.remove('ewave_cart_calibrate_click');
             });
         }
+
 
     } else {
         chrome.runtime.sendMessage({
